@@ -16,13 +16,14 @@ mrb_instance_allocate(mrb_state *mrb, mrb_value cv)
   return obj;
 }
 
+
 void
 mrb_allocate_gem_init(mrb_state* mrb) {
   struct RClass *cls = mrb_class_get(mrb,"Class");
-  mrb_define_method(mrb, cls, "allocate", mrb_instance_allocate, ARGS_ANY()); 
+  mrb_define_method(mrb, cls, "allocate", mrb_instance_allocate, ARGS_ANY());  
 }
 
 void
 mrb_allocate_gem_final(mrb_state* mrb) {
-  printf("finalized");
+  // finalize
 }
