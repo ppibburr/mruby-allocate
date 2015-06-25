@@ -21,7 +21,7 @@ void
 mrb_mruby_allocate_gem_init(mrb_state* mrb) {
   int ai = mrb_gc_arena_save(mrb);
   struct RClass *cls = mrb_class_get(mrb,"Class");
-  mrb_define_method(mrb, cls, "allocate", mrb_instance_allocate, ARGS_ANY()); 
+  mrb_define_method(mrb, cls, "allocate", mrb_instance_allocate, MRB_ARGS_ANY()); 
   mrb_gc_arena_restore(mrb,ai); 
 }
 
